@@ -1,0 +1,64 @@
+{
+  "name": "quoridor-game",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev:backend": "yarn workspace backend run start:dev",
+    "dev:frontend": "yarn workspace frontend run dev",
+    "build:backend": "yarn workspace backend run build",
+    "build:frontend": "yarn workspace frontend run build",
+    "build:shared": "yarn workspace quoridor-game-shared run build",
+    "start:backend": "yarn workspace backend run start",
+    "start:frontend": "yarn workspace frontend run start",
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:fs": "ls-lint",
+    "lint": "yarn lint:editorconfig && yarn lint:fs",
+    "lint:frontend": "yarn workspace frontend lint",
+    "lint:backend": "yarn workspace backend lint",
+    "lint:shared": "yarn workspace quoridor-game-shared lint",
+    "lint:all": "yarn lint && yarn lint:shared && yarn lint:frontend && yarn lint:backend",
+    "update-shared": "cd shared && yarn build && cd ../"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.2.0",
+    "@eslint/js": "9.18.0",
+    "@ls-lint/ls-lint": "2.2.3",
+    "@types/node": "20.14.8",
+    "@typescript-eslint/eslint-plugin": "8.19.1",
+    "@typescript-eslint/parser": "8.19.1",
+    "editorconfig-checker": "6.0.1",
+    "eslint": "9.27.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "lint-staged": "15.3.0",
+    "prettier": "3.4.2",
+    "simple-git-hooks": "2.11.1",
+    "tsc-alias": "1.8.10",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.19.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint-staged"
+  },
+  "packageManager": "yarn@4.6.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.7.2",
+    "@fortawesome/free-solid-svg-icons": "6.7.2",
+    "@fortawesome/react-fontawesome": "0.2.2",
+    "@types/yup": "0.32.0",
+    "class-validator": "0.14.1",
+    "dotenv": "16.4.7",
+    "yup": "1.6.1"
+  }
+}

@@ -1,21 +1,37 @@
 {
+  "extends": "../tsconfig.json",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "swc": true
+  },
   "compilerOptions": {
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext"],
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "./dist",
     "baseUrl": "./",
+    "outDir": "./dist",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "~/*": ["./src/*"],
+      "~db/*": ["./src/db/*"],
+      "~libs/*": ["./src/libs/*"],
+      "~modules/*": ["./src/modules/*"],
+      "~shared/*": ["./src/shared/*"]
+    }
   }
 }
