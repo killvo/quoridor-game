@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "8.19.1",
     "@typescript-eslint/parser": "8.19.1",
     "editorconfig-checker": "6.0.1",
-    "eslint": "9.27.0",
+    "eslint": "9.18.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-import": "2.31.0",

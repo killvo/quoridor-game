@@ -1,0 +1,106 @@
+@use '@/styles/colors' as colors;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: colors.$color-background;
+    border-radius: 10px;
+    gap: 1rem;
+    padding: 4rem;
+
+    .walls_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 100%;
+      height: 110px;
+      gap: 50px;
+      background-color: #31364A;
+
+      .wall {
+        background-color: colors.$color-wall;
+        width: 10px;
+        height: 110px;
+      }
+    }
+
+    .tiles_container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0.7rem;
+      border-radius: 2%;
+      background-color: #091E33;
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+  }
+
+  .left_block {
+    display: flex;
+  }
+
+  .right_block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    button {
+      width: 120px;
+      height: 35px;
+      border: 0;
+      border-radius: 7px;
+      outline: none;
+      background-color: colors.$color-tile;
+      cursor: pointer;
+      color: #edf5ff;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #4896c3;
+      }
+    }
+
+    .game_control {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: colors.$color-background;
+    }
+
+    .wall_picker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: colors.$color-background;
+
+      .title {
+        font-family: Inter, serif;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .active {
+        background-color: colors.$color-wall;
+      }
+    }
+  }
+}
+
+

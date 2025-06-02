@@ -1,3 +1,4 @@
+import tsParser from '@typescript-eslint/parser';
 import eslintPluginReact from 'eslint-plugin-react';
 import eslintPluginJSXA11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginImport from 'eslint-plugin-import';
@@ -8,6 +9,9 @@ export default [
   ...baseConfig,
   eslintPluginReact.configs.flat.recommended,
   eslintPluginImport.flatConfigs.recommended,
+  {
+    ignores: ['vite.config.js'],
+  },
   {
     plugins: {
       'jsx-a11y': eslintPluginJSXA11y,
@@ -60,7 +64,7 @@ export default [
         {
           ignorePropertyModificationsFor: ['^draft', '^state'],
         },
-      ],
+      ]
     },
     settings: {
       react: {
