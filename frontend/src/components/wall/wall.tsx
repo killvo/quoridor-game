@@ -1,20 +1,20 @@
 import { JSX } from 'react';
 import clsx from 'clsx';
 
-import { WallOrientation } from '@/containers/board/board';
+import { Orientation } from 'quoridor-game-shared';
 
 import styles from './styles.module.scss';
 
 interface WallProps {
-  orientation: WallOrientation;
+  orientation: Orientation;
 }
 
 const Wall = ({ orientation }: WallProps): JSX.Element => (
   <div
     className={clsx(
       styles.wall,
-      { [styles.horizontal]: orientation === WallOrientation.HORIZONTAL },
-      { [styles.vertical]: orientation === WallOrientation.VERTICAL },
+      { [styles.horizontal]: orientation === Orientation.HORIZONTAL },
+      { [styles.vertical]: orientation === Orientation.VERTICAL },
     )}
   />
 );

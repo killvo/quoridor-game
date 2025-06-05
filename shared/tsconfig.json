@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "lib": ["ESNext"],
     "baseUrl": ".",
+    "rootDir": "./",
     "outDir": "dist",
     "declaration": true,
     "esModuleInterop": true,
